@@ -1,0 +1,18 @@
+class Solution(object):
+    def twoSum(self, nums, target):
+        
+        for i in range (len(nums)-1):
+            targetmatch = target - nums[i]
+            temp = nums[i]
+            nums[i] = None
+            if targetmatch in nums:
+                return [i, nums.index(targetmatch)]
+            nums[i] = temp
+
+"""
+problem: what if there are multiple of the same numbers on nums?
+ex, nums [3,3,3]; target = 6
+output will be [0,1] but [0,2], [1,2] is also valid
+should be okey since it is assumed that there is EXACTLY ONE solution
+but what if there is not? something to keep in mind
+"""   
