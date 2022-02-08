@@ -11,3 +11,9 @@ class Solution(object):
                 profit = prices[i] - minimum
                 
         return profit
+
+"""
+Results:
+Beat 93% of Runtime Distribution
+Beat 77% of Memory Distribution
+"""

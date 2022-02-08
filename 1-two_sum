@@ -10,9 +10,15 @@ class Solution(object):
             nums[i] = temp
 
 """
-problem: what if there are multiple of the same numbers on nums?
+Notes:
+
+Problem: what if there are multiple of the same numbers on nums?
 ex, nums [3,3,3]; target = 6
 output will be [0,1] but [0,2], [1,2] is also valid
 should be okey since it is assumed that there is EXACTLY ONE solution
 but what if there is not? something to keep in mind
+
+Results:
+Beat 51% of Runtime Distribution
+Beat 91% of Memory Distribution
 """   

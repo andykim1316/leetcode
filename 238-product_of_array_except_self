@@ -1,0 +1,35 @@
+class Solution(object):
+    def productExceptSelf(self, nums):
+     
+        final = []
+        product = 1
+    
+        for i in range (len(nums)):
+            product *= nums[i]
+    
+        for i in range (len(nums)):
+            final.append(product)
+        
+        for i in range (len(nums)):
+            final[i] = final[i]/nums[i]
+    
+        return final
+    
+
+        
+"""
+
+    fails: since edge case when there is an 0 in array
+
+    num = 1
+    final = []
+        
+    for i in range (len(nums)):
+         for j in range (len(nums)):
+             if (j != i):
+                num = num * nums[j]        
+         final.append(num)
+         num = 1
+        
+     return final
+"""

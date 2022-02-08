@@ -1,0 +1,31 @@
+class Solution(object):
+    def containsDuplicate(self, nums):
+        
+        dict = {}
+        
+        for i in nums:
+            if i not in dict:
+                dict[i] = 1
+            else:
+                return True
+        
+        return False
+        
+"""    
+# Method 1 -- Sorting   
+
+nums.sort()
+for i in range (len(nums) - 1):
+    if (nums[i] == nums [i+1]):
+        return True
+return False
+    
+# Method 2 -- Set solution for python
+
+ return len(nums) != len(set(nums))
+
+Results:
+Beat 45% of Runtime Distribution
+Beat 9% of Memory Distribution
+
+"""
