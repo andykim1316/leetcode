@@ -1,6 +1,36 @@
 class Solution(object):
     def productExceptSelf(self, nums):
      
+        size = len(nums)
+        ans = [1]*size
+        right = 1
+        
+        for i in range (1, size):
+            ans[i] = ans[i-1] * nums[i-1]
+            
+        for i in range (size - 1, -1, -1):
+            ans[i] = ans[i] * right
+            right *= nums[i]
+        
+        return ans
+        
+"""
+# TLE
+
+    num = 1
+    final = []
+        
+    for i in range (len(nums)):
+         for j in range (len(nums)):
+             if (j != i):
+                num = num * nums[j]        
+         final.append(num)
+         num = 1
+        
+     return final
+     
+# Edge case one of the cell is 0
+
         final = []
         product = 1
     
@@ -14,22 +44,28 @@ class Solution(object):
             final[i] = final[i]/nums[i]
     
         return final
+        
+# O(n) space-time, not ideal but works (38%, 19%)
+
+        size = len(nums)
     
+        L = [1]*size
+        R = [1]*size
+        final = [1]*size
 
+        for i in range (1, size):
+            L[i] = L[i-1] * nums[i-1]
+
+        for i in range (size - 2, -1, -1):
+            R[i] = R[i+1] * nums[i+1]
+
+        for i in range (size):
+            final[i] = L[i]*R[i]
+
+        return final
         
+Results:
+Beat 88% of Runtime Distribution
+Beat 80% of Memory Distribution
 """
-
-    fails: since edge case when there is an 0 in array
-
-    num = 1
-    final = []
         
-    for i in range (len(nums)):
-         for j in range (len(nums)):
-             if (j != i):
-                num = num * nums[j]        
-         final.append(num)
-         num = 1
-        
-     return final
-"""
