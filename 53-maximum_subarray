@@ -1,0 +1,21 @@
+class Solution(object):
+    def maxSubArray(self, nums):
+        
+        curArr = 0
+        maxArr = -10001
+        
+        for num in nums:
+            curArr += num
+            if curArr < num:
+                curArr = nums[i]
+            if curArr > maxArr:
+                maxArr = curArr
+        
+        return maxArr
+
+
+"""
+Results:
+Beat 58% of Runtime Distribution
+Beat 49% of Memory Distribution
+"""
